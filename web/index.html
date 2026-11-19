@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INFRA 4D INTELLIGENCE — beta (dados fictícios)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%2312263f'/%3E%3Cpath d='M2 12h12M4 9h8M6 6h4' stroke='%23ffd24a' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/static/estilo.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "/static/vendor/three/three.module.min.js",
+    "three/addons/controls/OrbitControls.js": "/static/vendor/three/OrbitControls.js",
+    "three/addons/loaders/GLTFLoader.js": "/static/vendor/three/loaders/GLTFLoader.js"
+  }
+}
+</script>
+</head>
+<body>
+<header class="topo">
+  <div class="marca">
+    <h1>INFRA 4D <span>INTELLIGENCE</span></h1>
+    <p class="sub">Monitoramento físico 4D · caminho crítico · previsão independente de conclusão</p>
+  </div>
+  <div class="obra-ctl">
+    <label>Obra <select id="obra-sel" aria-label="Obra"><option value="">carregando…</option></select></label>
+    <button type="button" id="btn-tour" title="Tour de ~12 passos que executa as ações e lê os números da API">▶ Apresentação guiada</button>
+    <button type="button" id="btn-relatorio" title="Abre o relatório técnico imprimível da obra em nova aba">Relatório técnico</button>
+    <button type="button" id="btn-reuniao" aria-pressed="false" title="Mais espaço para o modelo e controles de apresentação">Modo reunião</button>
+  </div>
+  <div id="faixa-aviso" class="faixa-aviso" role="note">
+    <strong>DADOS FICTÍCIOS — demonstração</strong>
+    <span id="aviso-obra" class="aviso-obra"></span>
+    <span>Data de status: <b id="aviso-data-status">—</b></span>
+    <span id="aviso-sim" class="tag-sim" hidden>Simulação ativa</span>
+  </div>
+</header>
+
+<div id="erro-global" class="erro-global" hidden>
+  <span id="erro-global-texto"></span>
+  <button id="erro-global-repetir" type="button">Tentar de novo</button>
+</div>
+
+<nav class="abas" role="tablist">
+  <button role="tab" data-aba="apresentacao" class="ativa">Apresentação</button>
+  <button role="tab" data-aba="painel">Painel</button>
+  <button role="tab" data-aba="modelo">Modelo 3D/4D</button>
+  <button role="tab" data-aba="cronograma">Cronograma (Gantt)</button>
+  <button role="tab" data-aba="balanco">Linha de balanço</button>
+  <button role="tab" data-aba="recursos">Recursos</button>
+  <button role="tab" data-aba="cronoimport">Cronograma da construtora</button>
+  <button role="tab" data-aba="fiscalizacao">Fiscalização</button>
+  <button role="tab" data-aba="analises">Análises</button>
+  <button role="tab" data-aba="simulacao">Simulação</button>
+</nav>
+
+<section class="filtros" id="filtros" aria-label="Filtros globais">
+  <label>Lote <select id="f-lote"><option value="">Todos</option></select></label>
+  <label>Disciplina <select id="f-disciplina"><option value="">Todas</option></select></label>
+  <label>Serviço <select id="f-servico"><option value="">Todos</option></select></label>
+  <label class="chk"><input type="checkbox" id="f-critico"> Só caminho crítico</label>
+  <label>Segmento <select id="f-segmento"><option value="">Todos</option></select></label>
+  <label title="Atividades cujo trecho encosta na faixa (extremos inclusivos)">km <input type="number" id="f-km-ini" min="0" step="0.1" placeholder="de" class="f-num"> a <input type="number" id="f-km-fim" min="0" step="0.1" placeholder="até" class="f-num"></label>
+  <label title="Atividades que ocorrem entre as duas datas no cenário corrente">Período <input type="date" id="f-data-ini"> a <input type="date" id="f-data-fim"></label>
+  <button type="button" id="f-limpar" title="Volta todos os filtros ao padrão">Limpar filtros</button>
+  <label>Cenário <select id="f-cenario">
+    <option value="independente">Independente</option>
+    <option value="construtora">Construtora</option>
+    <option value="simulado">Simulado</option>
+    <option value="linha_base">Linha de base</option>
+  </select></label>
+  <span class="filtro-resumo" id="f-resumo"></span>
+</section>
+
+<main class="conteudo">
+  <!-- APRESENTAÇÃO -->
+  <section class="aba" id="aba-apresentacao">
+    <div id="apresentacao" class="apresentacao"></div>
+  </section>
+
+  <!-- PAINEL -->
+  <section class="aba" id="aba-painel" hidden>
+    <div id="painel" class="painel"><p class="vazio">Carregando painel…</p></div>
+  </section>
+
+  <!-- MODELO 3D/4D -->
+  <section class="aba aba-com-detalhes" id="aba-modelo" hidden>
+    <div class="modelo-col">
+      <div class="visual-controles">
+        <label>Experiência <select id="v-experiencia" aria-label="Experiência visual">
+          <option value="analise">Análise 4D · cores de avanço</option>
+          <option value="apresentacao">Apresentação · corredor e ponte</option>
+          <option value="tecnico">Técnico · escala 1:1</option>
+        </select></label>
+        <button type="button" id="v-oae">Detalhe da ponte</button>
+        <button type="button" id="v-superior">Vista superior</button>
+        <label class="chk"><input type="checkbox" id="v-corte"> Corte transversal</label>
+        <label class="chk"><input type="checkbox" id="v-baixo-consumo"> Baixo consumo</label>
+        <button type="button" id="v-filtros" aria-expanded="true">Filtros</button>
+      </div>
+      <div class="visual-aviso" id="v-visual-aviso" hidden>100% FICTÍCIO · Ponte, materiais e terreno ilustrativos. Não é projeto estrutural nem fonte de quantitativos.</div>
+      <div class="viewer-barra">
+        <label>Geometria <select id="v-geometria">
+          <option value="sintetica">Esquemática (sintética)</option>
+          <option value="ifc">Modelo IFC (GLB)</option>
+        </select></label>
+        <a class="botao-link" id="v-baixar-ifc" href="/api/ifc/exportar?incluir_4d=true" download title="IFC 4.3 da obra com o cronograma (4D)">Baixar IFC com cronograma</a>
+        <label>Cor por <select id="v-modo-cor">
+          <option value="estado">Estado 4D</option>
+          <option value="desvio">Desvio vs linha de base</option>
+          <option value="servico">Serviço (camada)</option>
+        </select></label>
+        <label>Exagero transversal/vertical <select id="v-exagero">
+          <option value="1">1× (real)</option>
+          <option value="10">10×</option>
+          <option value="40" selected>40× (padrão)</option>
+          <option value="80">80×</option>
+        </select></label>
+        <label class="chk"><input type="checkbox" id="v-ocultar"> Ocultar filtrados</label>
+        <span class="ir-para" id="ir-para">Ir para:
+          <span id="ir-para-lotes"></span><button type="button" data-ir-km="frente">Frente crítica</button>
+        </span>
+        <button type="button" id="v-enquadrar">Enquadrar tudo</button>
+        <span id="v-hover" class="v-hover"></span>
+      </div>
+      <div class="viewer-wrap">
+        <div id="viewer" class="viewer"><p class="vazio">Carregando modelo…</p></div>
+        <div id="v-info" class="v-info" hidden></div>
+        <div id="v-vazio" class="v-vazio" hidden>Nenhuma peça atende aos filtros (lote, disciplina, serviço, crítico, segmento, km, período).
+          <button type="button" id="v-vazio-limpar">Limpar filtros</button></div>
+      </div>
+      <div class="viewer-ajuda">Orbitar: arraste com botão esquerdo · mover: botão direito · zoom: rolagem · Detalhe da ponte: vista local 1:1 · Corte: plano fixo na câmera atual.</div>
+      <div id="legenda-3d" class="legenda"></div>
+      <div id="v-ifc-status" class="legenda" hidden></div>
+      <div class="timeline" id="timeline">
+        <button type="button" id="t-play" title="Reproduzir (passo semanal)">▶</button>
+        <div class="t-trilho">
+          <input type="range" id="t-slider" min="0" max="1" value="0" step="1" aria-label="Data 4D">
+          <div id="t-marca-status" class="t-marca-status" title="Data de status"></div>
+        </div>
+        <span class="t-data">Data: <b id="t-data">—</b></span>
+        <label>Ritmo <select id="t-velocidade" aria-label="Velocidade da timeline"><option value="7">1 semana</option><option value="28">4 semanas</option><option value="1">1 dia</option></select></label>
+        <button type="button" id="t-status">Ir para data de status</button>
+      </div>
+      <details class="federacao-painel" id="federacao-painel"><summary>Revisões federadas · retorno de QGIS, Blender e FreeCAD</summary><div id="federacao"></div></details>
+    </div>
+    <aside class="detalhes" data-detalhes></aside>
+  </section>
+
+  <!-- CRONOGRAMA -->
+  <section class="aba aba-com-detalhes" id="aba-cronograma" hidden>
+    <div class="crono-col">
+      <div class="gantt-barra">
+        <span>Zoom</span>
+        <button type="button" data-zoom="1" class="ativo">Ajustar</button>
+        <button type="button" data-zoom="2">2×</button>
+        <button type="button" data-zoom="4">4×</button>
+        <span class="gantt-leg" id="gantt-legenda"></span>
+      </div>
+      <div id="gantt" class="gantt"><p class="vazio">Carregando cronograma…</p></div>
+      <h3>Tabela de atividades</h3>
+      <div id="tabela" class="tabela-wrap"></div>
+    </div>
+    <aside class="detalhes" data-detalhes></aside>
+  </section>
+
+  <!-- LINHA DE BALANÇO -->
+  <section class="aba aba-com-detalhes" id="aba-balanco" hidden>
+    <div class="crono-col">
+      <div class="gantt-barra">
+        <label class="chk"><input type="checkbox" id="lb-sobrepor"> Sobrepor linha de base (tracejada)</label>
+        <label class="chk"><input type="checkbox" id="lb-real"> Linha REAL executada</label>
+        <label class="chk"><input type="checkbox" id="lb-conflitos" checked> Conflitos entre frentes</label>
+        <label>buffer <input type="number" id="lb-buffer-km" value="1" min="0" max="100" step="0.1" style="width:64px"> km</label>
+        <label><input type="number" id="lb-buffer-dias" value="0" min="0" max="365" step="1" style="width:56px"> dias</label>
+        <span id="lb-resumo" class="filtro-resumo" style="margin-left:0"></span>
+      </div>
+      <div id="balanco" class="balanco"><p class="vazio">Carregando linha de balanço…</p></div>
+      <div id="balanco-legenda" class="legenda-graf"></div>
+      <div id="balanco-conflitos"></div>
+    </div>
+    <aside class="detalhes" data-detalhes></aside>
+  </section>
+
+  <!-- RECURSOS -->
+  <section class="aba aba-com-detalhes" id="aba-recursos" hidden>
+    <div class="crono-col"><div id="recursos"><p class="vazio">Carregando recursos…</p></div></div>
+    <aside class="detalhes" data-detalhes></aside>
+  </section>
+
+  <!-- CRONOGRAMA DA CONSTRUTORA (MSPDI / XER) -->
+  <section class="aba aba-com-detalhes" id="aba-cronoimport" hidden>
+    <div class="crono-col"><div id="cronoimport"><p class="vazio">Carregando…</p></div></div>
+    <aside class="detalhes" data-detalhes></aside>
+  </section>
+
+  <!-- FISCALIZAÇÃO (sintética) -->
+  <section class="aba aba-com-detalhes" id="aba-fiscalizacao" hidden>
+    <div class="crono-col"><div id="fiscalizacao"><p class="vazio">Carregando fiscalização…</p></div></div>
+    <aside class="detalhes" data-detalhes></aside>
+  </section>
+
+  <!-- ANÁLISES -->
+  <section class="aba aba-com-detalhes" id="aba-analises" hidden>
+    <div class="crono-col"><div id="analises"><p class="vazio">Carregando análises…</p></div></div>
+    <aside class="detalhes" data-detalhes></aside>
+  </section>
+
+  <!-- SIMULAÇÃO -->
+  <section class="aba" id="aba-simulacao" hidden>
+    <div id="simulacao" class="simulacao"><p class="vazio">Carregando…</p></div>
+  </section>
+</main>
+
+<footer class="rodape">INFRA 4D INTELLIGENCE · beta · todos os dados são sintéticos e não representam obra, contrato ou empresa reais · three.js (MIT)</footer>
+
+<script type="module" src="/static/app.js"></script>
+</body>
+</html>

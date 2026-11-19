@@ -1,0 +1,54 @@
+INFRA 4D INTELLIGENCE — NOTICE
+
+Copyright (c) 2026 Emmily Maciel. Código próprio sob os termos do arquivo LICENSE
+(todos os direitos reservados; visualização para avaliação de portfólio).
+
+Os componentes de terceiro abaixo NÃO são cobertos pelo LICENSE deste repositório:
+seguem as licenças dos respectivos autores.
+
+------------------------------------------------------------------------------
+1. Incluído neste repositório (vendorizado, sem modificação)
+------------------------------------------------------------------------------
+
+three.js r170 — MIT — Copyright 2010-2024 three.js authors
+  Caminho: web/vendor/three/ (three.module.min.js, OrbitControls.js,
+  loaders/GLTFLoader.js, utils/BufferGeometryUtils.js)
+  Texto da licença: web/vendor/three/LICENSE
+  Fonte: https://github.com/mrdoob/three.js
+
+------------------------------------------------------------------------------
+2. Dependências instaladas pelo requirements.txt (não incluídas no repositório)
+------------------------------------------------------------------------------
+
+Diretas:
+  pytest        — MIT            — https://github.com/pytest-dev/pytest
+  FastAPI       — MIT            — https://github.com/fastapi/fastapi
+  uvicorn       — BSD-3-Clause   — https://github.com/encode/uvicorn
+  httpx         — BSD-3-Clause   — https://github.com/encode/httpx
+  IfcOpenShell  — LGPL-3.0-or-later — https://github.com/IfcOpenShell/IfcOpenShell
+                  usado como biblioteca, sem modificação (ADR-0002; licença
+                  verificada em docs/research/R04 e R07). Opcional: sem ele o
+                  módulo IFC fica indisponível e o resto da API funciona.
+
+Principais transitivas:
+  Starlette (BSD-3-Clause), Pydantic (MIT), NumPy (BSD-3-Clause),
+  Shapely (BSD-3-Clause), lark (MIT), isodate (BSD-3-Clause).
+
+------------------------------------------------------------------------------
+3. Programas externos (não incluídos, não vinculados ao processo)
+------------------------------------------------------------------------------
+
+QGIS (GPL-2.0-or-later), Blender (GPL-2.0-or-later) e FreeCAD (LGPL-2.0-or-later)
+são usados apenas como programas externos, trocando arquivos GeoJSON/IFC com este
+sistema (contrato infra4d.interop/1, ADR-0016). Nenhum código deles é incluído.
+
+------------------------------------------------------------------------------
+4. Dados e marcas
+------------------------------------------------------------------------------
+
+Todos os dados em examples/ são sintéticos (meta.ficticio: true). A fixture do
+Obrasgov.br só reproduz o FORMATO da API pública do Governo Federal, com valores
+inventados. Arquivos IFC de exemplo da buildingSMART baixados por um teste
+opcional ficam em output/ifc/externos/ (ignorado pelo Git; nunca versionado).
+Nomes de produtos (Primavera P6, MS Project, QGIS, Blender, FreeCAD, IfcOpenShell)
+pertencem aos respectivos titulares e são citados só para descrever compatibilidade.

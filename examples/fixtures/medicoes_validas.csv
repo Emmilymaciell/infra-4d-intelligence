@@ -1,0 +1,7 @@
+﻿#ficticio=true
+#origem=Fixture SINTÉTICA INFRA 4D (dados fictícios, escrita à mão)
+atividade_id;data;semana_inicio;quantidade;equipes_dias;km_ini_exec;km_fim_exec;horas_chuva;estado;ref_memoria_calculo;observacao
+L3-S03-TER;2026-11-07;;6.000,0;2;52,500;52,600;0;conferido_fiscal;;Diário sintético: frente reforçada
+L3-S03-TER;2026-11-05;;5800;2;52,400;52,500;1,5;conferido_fiscal;;Diário sintético com chuva leve
+L1-S03-LAS;;2026-11-07;1200,5;2;;;0;aprovado;MC-FIC-001;Boletim semanal sintético
+L1-S03-SOL;2026-11-06;;3,5;1;;;0;lancado;;Início da frente (sintético)

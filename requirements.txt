@@ -1,0 +1,23 @@
+# Dependencias Python deste projeto.
+#
+# O bootstrap.ps1 le este arquivo e instala tudo no .venv/ do projeto.
+#
+# Fixe um teto de versao no que puder quebrar: "pytest>=9,<10" e melhor que
+# "pytest>=9". Sem teto, uma major nova quebra a suite sem nada no repositorio
+# tendo mudado, e o culpado fica invisivel.
+#
+# Versoes efetivamente instaladas e testadas em 2026-11-12:
+#   fastapi 0.162.5, uvicorn 0.54.0, httpx 0.28.1, pydantic 2.14.3, starlette 1.10.0
+# Licencas: FastAPI MIT, uvicorn BSD-3, httpx BSD-3, pydantic MIT, pytest MIT.
+
+pytest>=9,<10
+# Piso = versao testada: o FastAPI 0.141 trata corpo JSON `null` como corpo ausente (422) e quebra
+# o contrato de POST /api/fiscalizacao/validar (null -> 200 com regra 'formato'; ver test_revisao_adversarial_r6).
+fastapi>=0.162,<1
+uvicorn>=0.30,<1
+# httpx: exigido pelo TestClient do FastAPI nos testes de API.
+httpx>=0.27,<1
+# IFC 4.3 (exportar/importar, malha, GLB) — LGPL-3.0-or-later, usado SEM modificação (ADR-0002;
+# licença verificada em R04/R07). Testado com 0.9.0.post1 (wheel oficial py313-win_amd64).
+# Sem ele, o módulo infra4d.ifc fica indisponível e os testes de IFC dão SKIP — a API segue funcionando.
+ifcopenshell>=0.9,<0.10

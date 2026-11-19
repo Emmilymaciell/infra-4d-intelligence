@@ -1,0 +1,28 @@
+ERMHDR	19.12	2026-11-12	Project	SINTETICO	Fixture escrita a mao	dbxDatabaseNoName	Project Management	BRL
+%T	PROJECT
+%F	proj_id	proj_short_name	plan_start_date	last_recalc_date	clndr_id
+%R	100	TRECHO-FICTICIO	2026-04-06 08:00	2026-04-15 00:00	10
+%T	CALENDAR
+%F	clndr_id	default_flag	clndr_name	clndr_type	day_hr_cnt	week_hr_cnt	clndr_data
+%R	10	Y	Seg-Sex 8h com feriado	CA_Base	8	40	(0||CalendarData()((0||DaysOfWeek()((0||1()())(0||2()((0||0(s|08:00|f|12:00)())(0||1(s|13:00|f|17:00)())))(0||3()((0||0(s|08:00|f|12:00)())(0||1(s|13:00|f|17:00)())))(0||4()((0||0(s|08:00|f|12:00)())(0||1(s|13:00|f|17:00)())))(0||5()((0||0(s|08:00|f|12:00)())(0||1(s|13:00|f|17:00)())))(0||6()((0||0(s|08:00|f|12:00)())(0||1(s|13:00|f|17:00)())))(0||7()())))(0||VIEW(ShowTotal|Y)())(0||Exceptions()((0||0(d|46133)())))))
+%T	TASK
+%F	task_id	proj_id	wbs_id	clndr_id	task_code	task_name	task_type	status_code	target_drtn_hr_cnt	remain_drtn_hr_cnt	act_start_date	act_end_date	cstr_type	cstr_date
+%R	1	100	1	10	MS0	Inicio (OS ficticia)	TT_Mile	TK_Complete	0	0	2026-04-06 08:00	2026-04-06 08:00		
+%R	2	100	1	10	A1010	Mobilizacao	TT_Task	TK_Complete	24	0	2026-04-06 08:00	2026-04-08 17:00		
+%R	3	100	1	10	A1020	Limpeza do terreno	TT_Task	TK_Active	40	24	2026-04-09 08:00			
+%R	4	100	1	10	A1030	Escavacao	TT_Task	TK_NotStart	48	48				
+%R	5	100	1	10	A1040	Aterro	TT_Task	TK_NotStart	32	32				
+%R	6	100	1	10	A1050	Drenagem	TT_Task	TK_NotStart	24	24				
+%R	7	100	1	10	A1060	Sinalizacao	TT_Task	TK_NotStart	16	16			CS_MSOA	2026-04-27 08:00
+%R	8	100	1	10	MS9	Fim do trecho	TT_FinMile	TK_NotStart	0	0				
+%T	TASKPRED
+%F	task_pred_id	task_id	pred_task_id	proj_id	pred_proj_id	pred_type	lag_hr_cnt
+%R	1	2	1	100	100	PR_FS	0
+%R	2	3	2	100	100	PR_FS	0
+%R	3	4	3	100	100	PR_FS	0
+%R	4	5	4	100	100	PR_SS	16
+%R	5	6	5	100	100	PR_FF	8
+%R	6	7	2	100	100	PR_FS	0
+%R	7	8	6	100	100	PR_FS	0
+%R	8	8	7	100	100	PR_FS	0
+%E

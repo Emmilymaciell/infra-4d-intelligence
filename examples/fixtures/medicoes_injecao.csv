@@ -1,0 +1,9 @@
+﻿#ficticio=true
+#origem=Fixture SINTÉTICA INFRA 4D (dados fictícios, escrita à mão)
+atividade_id;data;semana_inicio;quantidade;equipes_dias;km_ini_exec;km_fim_exec;horas_chuva;estado;ref_memoria_calculo;observacao
+"=HYPERLINK(""http://exemplo.invalid"";""clique"")";2026-11-05;;10;1;;;0;lancado;;fórmula na atividade
+L3-S03-TER;2026-11-05;;+1000;2;;;0;lancado;;número com +
+L3-S03-TER;2026-11-04;;=2*3000;2;;;0;lancado;;fórmula na quantidade
+L3-S03-TER;2026-11-03;;10;-1+3;;;0;lancado;;fórmula nas equipes
+L1-S03-LAS;2026-11-06;;100;1;;;0;lancado;;@SUM(A1:A9)
+L1-S03-LAS;2026-11-05;;100;1;;;0;lancado;;=1+1 observação com sinal de igual

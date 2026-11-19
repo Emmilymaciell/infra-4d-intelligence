@@ -1,0 +1,109 @@
+{
+  "_aviso": "FIXTURE FICTÍCIA escrita à mão no FORMATO da API pública do Obrasgov.br (openapi.json de https://api-publica.obrasgov.gestao.gov.br/obras/openapi.json, lido em 2026-11-12). Nenhum valor vem da API nem representa obra, órgão, empresa ou contrato real. CNPJs são inválidos de propósito.",
+  "_infra4d_ficticio": true,
+  "_origem": "docs/research/R10-obrasgov.md",
+  "projeto_investimento": {
+    "data": [
+      {
+        "id_projeto_investimento": "99999.26-01",
+        "projeto_estruturante": "Não",
+        "desc_nome": "DUPLICAÇÃO FICTÍCIA DA BR-FIC 999 — TRECHO SINTÉTICO",
+        "nr_cep": null,
+        "desc_endereco": "Rodovia fictícia, km 0 ao km 48",
+        "desc_projeto": "Projeto fictício para teste do adaptador INFRA 4D.",
+        "desc_funcao_social": null,
+        "desc_meta_global": "Duplicar 48 km de rodovia (fictício).",
+        "dt_inicial_prevista": "2025-12-01",
+        "dt_final_prevista": "2027-05-21",
+        "dt_cadastro": "2025-10-15T10:00:00",
+        "ano_cadastro": 2025,
+        "natureza_intervencao": "Obra",
+        "id_natureza_intervencao": 1,
+        "especie_intervencao": "Ampliação",
+        "id_especie_intervencao": 2,
+        "situacao": "Em execução",
+        "uf_principal": "XX",
+        "organizacao_resp": "ÓRGÃO FICTÍCIO DE INFRAESTRUTURA",
+        "cnpj_organizacao_resp": "00000000000000",
+        "populacao_beneficiada": null,
+        "desc_populacao_beneficiada": null,
+        "qtd_empregos_gerados": 350,
+        "ind_bim": 1,
+        "dt_inicial_efetiva": "2025-12-01",
+        "dt_final_efetiva": null,
+        "obs_pertinentes_intervencao": null,
+        "sistema_resp": "OBRASGOV",
+        "possui_estudo_viabilidade": "Sim",
+        "repassadores": [],
+        "tomadores": [],
+        "executores": [{"organizacao_executor": "ÓRGÃO FICTÍCIO DE INFRAESTRUTURA", "cnpj_executor": "00000000000000"}],
+        "investimentos_previstos": [{"vl_investimento_previsto": 250000000.0, "desc_nome_fonte_recurso": "Fonte fictícia"}],
+        "ppas": [],
+        "eixos_tipos": [{"eixo": "Infraestrutura (fictício)", "id_eixo": 1, "tipo": "Rodoviário", "id_tipo": 10, "subtipo": "Duplicação", "id_subtipo": 100}],
+        "fotos": [],
+        "pins": [{"pin": "início", "latitude": -15.9, "longitude": -48.9}, {"pin": "fim", "latitude": -15.6, "longitude": -48.6}],
+        "areas_restricao": []
+      }
+    ],
+    "total_pages": 1, "total_items": 1, "page_number": 1, "page_size": 50
+  },
+  "execucao_fisica": {
+    "data": [
+      {"id_projeto_investimento": "99999.26-01", "id_execucao_fisica": 1, "percentual_execucao_fisica": 12.5,
+       "dt_inicial_execucao": "2025-12-01T00:00:00", "dt_final_execucao": "2026-03-31T00:00:00",
+       "tipo_instrumento": null, "tipo_forma_execucao": "Contratada", "dt_criacao_instrumento": null,
+       "dt_cadastro_execucao": "2026-04-05T09:00:00.000000", "dt_atualizacao_execucao": "2026-04-05",
+       "indicativos": [], "motivos": []},
+      {"id_projeto_investimento": "99999.26-01", "id_execucao_fisica": 2, "percentual_execucao_fisica": 48.0,
+       "dt_inicial_execucao": "2025-12-01T00:00:00", "dt_final_execucao": "2026-07-31T00:00:00",
+       "tipo_instrumento": null, "tipo_forma_execucao": "Contratada", "dt_criacao_instrumento": null,
+       "dt_cadastro_execucao": "2026-08-04T09:00:00.000000", "dt_atualizacao_execucao": "2026-08-04",
+       "indicativos": [{"descricao_indicativo": "Indicativo fictício", "id_indicativo": 1}], "motivos": []},
+      {"id_projeto_investimento": "99999.26-01", "id_execucao_fisica": 3, "percentual_execucao_fisica": 81.9,
+       "dt_inicial_execucao": "2025-12-01T00:00:00", "dt_final_execucao": "2026-11-09T00:00:00",
+       "tipo_instrumento": null, "tipo_forma_execucao": "Contratada", "dt_criacao_instrumento": null,
+       "dt_cadastro_execucao": "2026-11-10T09:00:00.000000", "dt_atualizacao_execucao": "2026-11-10",
+       "indicativos": [], "motivos": [{"descricao_motivo": "Motivo fictício", "id_motivo": 7}]}
+    ],
+    "total_pages": 1, "total_items": 3, "page_number": 1, "page_size": 50
+  },
+  "contrato": {
+    "data": [
+      {"id_projeto_investimento": "99999.26-01", "id_contrato": 501, "numero_contrato": "FIC-001/2025",
+       "vigencia_inicio_contrato": "2025-11-20", "vigencia_fim_contrato": "2027-08-31",
+       "data_assinatura_contrato": "2025-11-18", "data_publicacao_contrato": "2025-11-19",
+       "modalidade_contrato": "Concorrência", "objeto_contrato": "Lote 1 (km 0–16) — fictício", "processo": "00000.000000/2025-00",
+       "receita_despesa_contrato": "Despesa", "orgao_contrato": "ÓRGÃO FICTÍCIO DE INFRAESTRUTURA",
+       "cnpj_fornecedor_contrato": "00000000000000", "fornecedor_contrato": "CONSÓRCIO FICTÍCIO PLANALTO",
+       "categoria_contrato": "Obras", "licitacao_numero": "FIC-01/2025", "situacao_contrato": "Ativo",
+       "link_transparencia": null, "valor_global_contrato": 80000000.0, "valor_acumulado_contrato": 81500000.0,
+       "valor_utilizado_pi_contrato": 80000000.0, "valor_incluido_contrato": 0.0},
+      {"id_projeto_investimento": "99999.26-01", "id_contrato": 502, "numero_contrato": "FIC-002/2025",
+       "vigencia_inicio_contrato": "2025-11-20", "vigencia_fim_contrato": "2027-08-31",
+       "data_assinatura_contrato": "2025-11-18", "data_publicacao_contrato": "2025-11-19",
+       "modalidade_contrato": "Concorrência", "objeto_contrato": "Lote 2 (km 16–32) — fictício", "processo": "00000.000000/2025-00",
+       "receita_despesa_contrato": "Despesa", "orgao_contrato": "ÓRGÃO FICTÍCIO DE INFRAESTRUTURA",
+       "cnpj_fornecedor_contrato": "00000000000000", "fornecedor_contrato": "CONSTRUTORA FICTÍCIA CERRADO",
+       "categoria_contrato": "Obras", "licitacao_numero": "FIC-01/2025", "situacao_contrato": "Ativo",
+       "link_transparencia": null, "valor_global_contrato": 85000000.0, "valor_acumulado_contrato": 85000000.0,
+       "valor_utilizado_pi_contrato": 85000000.0, "valor_incluido_contrato": 0.0}
+    ],
+    "total_pages": 1, "total_items": 2, "page_number": 1, "page_size": 50
+  },
+  "geometria": {
+    "data": [
+      {"id_projeto_investimento": "99999.26-01", "id_geometria": 9001, "sg_uf": "XX", "no_municipio": "Município Fictício A", "cod_ibge": 9999901, "origem_geometria": "Fictícia"},
+      {"id_projeto_investimento": "99999.26-01", "id_geometria": 9002, "sg_uf": "XX", "no_municipio": "Município Fictício B", "cod_ibge": 9999902, "origem_geometria": "Fictícia"}
+    ],
+    "total_pages": 1, "total_items": 2, "page_number": 1, "page_size": 50
+  },
+  "historico_situacao_cancelada_paralisada": {
+    "data": [
+      {"id_historico_situacao_investimento": 77, "descricao_historico_situacao_investimento": "Paralisada",
+       "data_historico_situacao_investimento": "2026-02-10", "justificativa_cancelada_paralisada": "Chuvas intensas (fictício)",
+       "possui_tratativas_situacao_investimento": "Sim", "fase_tratativas_situacao_investimento": "Concluída",
+       "id_projeto_investimento": "99999.26-01"}
+    ],
+    "total_pages": 1, "total_items": 1, "page_number": 1, "page_size": 50
+  }
+}

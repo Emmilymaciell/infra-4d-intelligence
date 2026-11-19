@@ -1,0 +1,164 @@
+# Preenchido por /os:new-project. Os campos marcados OBRIGATORIO nao podem ficar vazios.
+# Este arquivo e o cartao de identidade do projeto: /os:status, /os:handoff e
+# /os:portfolio leem daqui. Se estiver desatualizado, eles mentem.
+
+identidade:
+  nome: "infra-4d-intelligence"              # OBRIGATORIO. kebab-case.
+  titulo: "INFRA 4D INTELLIGENCE"           # OBRIGATORIO. Como uma pessoa chamaria.
+  descricao: "Plataforma BIM 4D de monitoramento fisico, analise de caminho critico e previsao independente de conclusao para obras rodoviarias e ferroviarias"         # OBRIGATORIO. Uma frase: que problema resolve.
+  categoria: "work"             # work | university | personal | ai-lab | platform
+  cliente: "parceira"                 # prog | dynatest | dyast | parceira | pessoal | faculdade
+  criado_em: "2026-11-12"
+  versao: "0.2.0"                       # SemVer, tres componentes (ADR-0006)
+
+classificacao:
+  # Determina o rigor aplicado. Nao inflar: projeto pequeno com rigor de producao
+  # so gera cerimonia. Reavaliar quando o projeto crescer.
+  porte: "ferramenta"                 # script | ferramenta | aplicacao | plataforma
+  criticidade: "baixa"        # baixa | media | alta
+  dados_sensiveis: false  # true se toca dado corporativo/pessoal de terceiro
+  # Excecoes DECLARADAS de dado sensivel. Vazio por padrao, e vazio e o normal.
+  #
+  # Este campo nasceu no manifesto da plataforma e nao aqui - o
+  # security-reviewer apontou o formato paralelo: projeto governado que toque
+  # dado de terceiro nao tinha onde declarar a excecao, e a plataforma
+  # governava por uma regra que ela nao distribuia.
+  #
+  # Campos de cada entrada, e TODOS sao obrigatorios para a excecao valer
+  # (ADR-0010):
+  #   caminho              - caminho exato, nao diretorio nem curinga
+  #   categoria            - a categoria exata do achado, como o relatorio a escreve
+  #   natureza             - o que existe naquele caminho
+  #   justificativa        - por que e aceitavel
+  #   decisao              - o que foi decidido, e o que continua exigido
+  #   status               - "aceito-por-excecao" e o UNICO valor que vale
+  #   decidido_em          - data
+  #   escopo               - "privado". Publicacao exige sanitizacao, nao excecao
+  #   onde_esta_registrado - o ADR que registra a decisao
+  #
+  # Duas regras que impedem isto de virar allowlist:
+  #   - correspondencia EXATA de caminho E categoria. Achado parecido em outro
+  #     arquivo continua bloqueando;
+  #   - o achado NAO e silenciado: continua no relatorio, com a severidade
+  #     original, citando a excecao. Aceitar e decisao registrada.
+  #
+  # 'status' diferente de "aceito-por-excecao", ou campo obrigatorio faltando,
+  # significa que a excecao NAO cobre nada. Declarar nao e decidir.
+  dados_sensiveis_excecoes:
+    - caminho: "docs/research/R10-obrasgov.md"
+      categoria: "e-mail que nao assina commits deste repositorio no historico"
+      natureza: "Somente contato institucional no blob historico 2f6fc389; arvore atual ja usa link oficial"
+      justificativa: "Titular autorizou retirar este bloqueio especifico para a preservacao privada da pausa em 16/11/2026"
+      decisao: "Permitir checkpoint e push normal privado desta missao; manter achado visivel e reapresentar a titular na retomada para decisao definitiva; nao abrange novos dados nem reescrita ou publicacao"
+      status: "aceito-por-excecao"
+      decidido_em: "2026-11-16"
+      escopo: "privado"
+      onde_esta_registrado: "docs/decisions/ADR-0017-excecao-temporaria-preservacao-privada.md"
+  componente_llm: false    # true se alguma saida depende de julgamento de modelo
+
+versionamento:
+  git: true
+  branch_padrao: "main"
+  remoto: ""                  # "" enquanto local. GitHub sempre privado.
+  visibilidade: "privado"               # privado | publico. Publico e ato deliberado.
+
+verificacao:
+  # Preenchido pela deteccao automatica, nao pela usuaria.
+  # A politica esta em docs/VERIFICATION-POLICY.md do Project OS. Declarar aqui
+  # NAO e verificar: o /os:doctor compara este bloco com o que existe de fato.
+  tests: true                  # codigo deterministico
+  evals: false                  # componente_llm == true
+  integration_tests: false # depende de servico externo
+  security_check: true       # scanner executado; achado herdado pendente, ver STATE (nao significa aprovado)
+  ci: false                             # ativado quando houver remoto
+  # O comando e o MESMO em todo projeto governado, qualquer que seja a
+  # linguagem. Nao personalize: o runner detecta a trilha. Ele existe porque o
+  # comando longo e especifico da maquina ficava copiado em CLAUDE.md e
+  # README.md e divergia - e comando de teste documentado e nunca executado
+  # foi a lacuna mais cara do teste de aceitacao da Fase 1.
+  # SOBRE HOOKS DE GIT (subfase 2.6 da plataforma):
+  # Quando este projeto adotar hooks, e aqui que a politica do pre-push vai
+  # morar - 'verificacao.hooks.pre_push', lista de BLOCO, vocabulario fechado
+  # (security, doctor, tests, nenhum). O campo NAO vem declarado por padrao de
+  # proposito: declarar politica de hook num projeto que ainda nao tem hooks
+  # seria afirmar capacidade que nao existe.
+  #
+  # O template ainda nao entrega os hooks porque as duas saidas tem custo -
+  # copiar o scanner e o doctor para dentro de cada projeto, ou criar uma
+  # segunda implementacao das mesmas regras. Ver o item 94 do backlog em
+  # docs/STATE.md da plataforma. Caminho absoluto para o plugin da maquina
+  # esta descartado: e dependencia oculta do computador atual.
+  comando: '.\tests\run-tests.ps1'
+  # A frase que define "pronto" para ESTE projeto. Fonte de verdade unica:
+  # os testes leem daqui. Nao repita o criterio na prosa do README nem cravado
+  # numa assercao - numero repetido envelhece, e ja envelheceu antes.
+  # Fonte: missao de execucao (2026-11-12), "criterio minimo de aceite do primeiro vertical slice".
+  criterio_de_pronto: "Beta local com dados sinteticos: alterar a produtividade de um servico recalcula a duracao pelo motor CPM independente, propaga pela rede e muda de forma justificada a previsao de termino, o painel e o estado 4D"
+  # Limites numericos que as assercoes usam, lidos pelo harness de teste.
+  # Vazio e o normal em projeto sem tolerancia numerica. Exemplo:
+  #   limites:
+  #     erro_maximo_m: 1.0
+  # Limite AUSENTE faz o teste falhar, nunca passar: criterio que nao esta
+  # aqui nao e criterio (VERIFICATION-POLICY 4.5).
+  limites:
+    tempo_maximo_recalculo_s: 2.0
+    # referência linear: ida e volta km <-> estaca (com e sem equação de estacas), em metros
+    tolerancia_estaca_m: 0.001
+    # linha de balanço: cruzamento analítico de frentes (t*), em dias
+    tolerancia_cruzamento_dias: 0.01
+    # diagrama de massas: volumes calculados x esperados à mão, em m3
+    tolerancia_volume_m3: 0.01
+    # Monte Carlo: indice de criticidade x probabilidade analitica (~3 sigma com 2000 iteracoes, p=1/4)
+    tolerancia_criticidade: 0.03
+    # /api/painel numa primeira chamada (app novo): medido 0,03-0,05 s; margem ~10x para maquina carregada
+    tempo_maximo_painel_s: 0.5
+    # IFC: vertices de cada peca com IfcLinearPlacement x IfcLocalPlacement (medido 1,5e-11 m)
+    tolerancia_posicao_ifc_m: 0.001
+    # GIS: ida e volta x/y -> lon/lat (8 casas, ~1,1 mm) -> km; medido 0,76 mm
+    tolerancia_georef_m: 0.002
+    # Conferencia da malha nativa Blender/GLB no visualizador; nao e tolerancia de locacao.
+    tolerancia_visual_federacao_m: 0.01
+    # Prova de ida e volta STEP do fragmento FreeCAD; nao e tolerancia de medicao contratual.
+    tolerancia_volume_cad_m3: 0.000001
+    # Fracao linear minima do viewport ocupada pela revisao apos comando de enquadrar.
+    ocupacao_linear_minima_revisao_viewport: 0.1
+    # cobertura da previsao: alerta de frente sem medicao com folga <= X dias uteis ate o marco (R12 §5, item 10)
+    folga_alerta_sem_medicao_du: 10
+  # Derivado de classificacao.criticidade (ADR-0007), nao escolhido a gosto:
+  #   baixa -> nenhuma | media -> qa | alta -> qa+security
+  # dados_sensiveis: true forca no minimo qa+security.
+  revisao_independente: "nenhuma"
+
+execucao:
+  # Como conduzir o trabalho neste projeto. Reavaliar quando o projeto crescer.
+  modo_atual: "subagent"                # main-claude | subagent | parallel | worktrees | agent-team | workflow
+  nivel_autonomia: 4                    # 0 ler .. 7 deploy. Ver ARCHITECTURE.md secao 8.
+
+ambiente:
+  python: "3.13"                  # 3.12 | 3.13 | nao-usa. Fixar: a maquina tem os dois.
+  node: "nao-usa"                      # 24 | nao-usa
+  powershell: "5.1"
+  dependencias_externas: []             # ex.: Excel via COM, SharePoint, n8n, Notion
+  # O que o /os:doctor COBRA. Campo ausente vira WARN ("ainda nao declarou");
+  # [] e declaracao EXPLICITA de que nao ha dependencia verificavel, e e
+  # valido. A diferenca entre os dois e "nao tenho" contra "nao pensei".
+  # Ausencia de ferramenta que o projeto NAO declara usar nunca e diagnostico
+  # negativo.
+  # Entrada: ferramenta (nome no PATH), para (por que), obrigatoria (true
+  # quando verificacao.comando nao roda sem ela - obrigatoria e ausente e
+  # FAIL; opcional e ausente e WARN).
+  #   dependencias:
+  #     - ferramenta: "git"
+  #       para: "versionamento"
+  #       obrigatoria: true
+  dependencias: []
+
+portfolio:
+  elegivel: false
+  exposicao: "nenhuma"                  # nenhuma | sanitizado | completo
+  # "sanitizado" exige passar pelo /os:portfolio. Nunca inventar metrica.
+
+estado:
+  fase: "pausado-aguardando-revisao-da-titular"
+  ultimo_checkpoint: "2026-11-16 snapshot de pausa para revisao da titular; identificar commit por git log -1 -- docs/SNAPSHOT-PAUSA-2026-11-16.md; recibos de verificacao em output/pausa/2026-11-16; excecao temporaria ADR-0017"              # Snapshot de preservacao, sem nova versao/tag ou homologacao.
+  # O estado detalhado vive em docs/STATE.md. Aqui fica so o ponteiro.

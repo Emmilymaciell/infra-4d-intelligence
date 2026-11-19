@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- FIXTURE SINTÉTICA escrita à mão (INFRA 4D, 2026-11-12) conforme a referência pública do MSPDI.
+     Não foi gerada nem aberta no MS Project. Resultado esperado (calculado à mão) em
+     tests/test_importadores_mspdi.py. Calendário: segunda a sexta, feriado fictício 2026-03-06 (sexta). -->
+<Project xmlns="http://schemas.microsoft.com/project">
+  <SaveVersion>14</SaveVersion>
+  <Name>mspdi_minimo.xml</Name>
+  <Title>Trecho ficticio - fixture minima</Title>
+  <ScheduleFromStart>1</ScheduleFromStart>
+  <StartDate>2026-03-02T08:00:00</StartDate>
+  <CalendarUID>1</CalendarUID>
+  <MinutesPerDay>480</MinutesPerDay>
+  <Calendars>
+    <Calendar>
+      <UID>1</UID>
+      <Name>Padrao</Name>
+      <IsBaseCalendar>1</IsBaseCalendar>
+      <BaseCalendarUID>-1</BaseCalendarUID>
+      <WeekDays>
+        <WeekDay><DayType>1</DayType><DayWorking>0</DayWorking></WeekDay>
+        <WeekDay><DayType>2</DayType><DayWorking>1</DayWorking>
+          <WorkingTimes><WorkingTime><FromTime>08:00:00</FromTime><ToTime>12:00:00</ToTime></WorkingTime>
+            <WorkingTime><FromTime>13:00:00</FromTime><ToTime>17:00:00</ToTime></WorkingTime></WorkingTimes></WeekDay>
+        <WeekDay><DayType>3</DayType><DayWorking>1</DayWorking>
+          <WorkingTimes><WorkingTime><FromTime>08:00:00</FromTime><ToTime>12:00:00</ToTime></WorkingTime>
+            <WorkingTime><FromTime>13:00:00</FromTime><ToTime>17:00:00</ToTime></WorkingTime></WorkingTimes></WeekDay>
+        <WeekDay><DayType>4</DayType><DayWorking>1</DayWorking>
+          <WorkingTimes><WorkingTime><FromTime>08:00:00</FromTime><ToTime>12:00:00</ToTime></WorkingTime>
+            <WorkingTime><FromTime>13:00:00</FromTime><ToTime>17:00:00</ToTime></WorkingTime></WorkingTimes></WeekDay>
+        <WeekDay><DayType>5</DayType><DayWorking>1</DayWorking>
+          <WorkingTimes><WorkingTime><FromTime>08:00:00</FromTime><ToTime>12:00:00</ToTime></WorkingTime>
+            <WorkingTime><FromTime>13:00:00</FromTime><ToTime>17:00:00</ToTime></WorkingTime></WorkingTimes></WeekDay>
+        <WeekDay><DayType>6</DayType><DayWorking>1</DayWorking>
+          <WorkingTimes><WorkingTime><FromTime>08:00:00</FromTime><ToTime>12:00:00</ToTime></WorkingTime>
+            <WorkingTime><FromTime>13:00:00</FromTime><ToTime>17:00:00</ToTime></WorkingTime></WorkingTimes></WeekDay>
+        <WeekDay><DayType>7</DayType><DayWorking>0</DayWorking></WeekDay>
+      </WeekDays>
+      <Exceptions>
+        <Exception>
+          <EnteredByOccurrences>0</EnteredByOccurrences>
+          <TimePeriod><FromDate>2026-03-06T00:00:00</FromDate><ToDate>2026-03-06T23:59:00</ToDate></TimePeriod>
+          <Occurrences>1</Occurrences>
+          <Name>Feriado ficticio</Name>
+          <Type>1</Type>
+          <DayWorking>0</DayWorking>
+        </Exception>
+      </Exceptions>
+    </Calendar>
+  </Calendars>
+  <Tasks>
+    <Task><UID>0</UID><ID>0</ID><Name>Resumo do projeto</Name><Summary>1</Summary></Task>
+    <Task>
+      <UID>1</UID><ID>1</ID><Name>A Mobilizacao</Name>
+      <Duration>PT24H0M0S</Duration><Milestone>0</Milestone><Summary>0</Summary>
+      <ConstraintType>0</ConstraintType><CalendarUID>1</CalendarUID>
+    </Task>
+    <Task>
+      <UID>2</UID><ID>2</ID><Name>B Escavacao</Name>
+      <Duration>PT40H0M0S</Duration><Milestone>0</Milestone><Summary>0</Summary>
+      <ConstraintType>0</ConstraintType><CalendarUID>1</CalendarUID>
+      <PredecessorLink><PredecessorUID>1</PredecessorUID><Type>1</Type><LinkLag>0</LinkLag><LagFormat>7</LagFormat></PredecessorLink>
+    </Task>
+    <Task>
+      <UID>3</UID><ID>3</ID><Name>C Drenagem</Name>
+      <Duration>PT32H0M0S</Duration><Milestone>0</Milestone><Summary>0</Summary>
+      <ConstraintType>0</ConstraintType><CalendarUID>1</CalendarUID>
+      <PredecessorLink><PredecessorUID>2</PredecessorUID><Type>3</Type><LinkLag>9600</LinkLag><LagFormat>7</LagFormat></PredecessorLink>
+    </Task>
+    <Task>
+      <UID>4</UID><ID>4</ID><Name>D Pavimento</Name>
+      <Duration>PT24H0M0S</Duration><Milestone>0</Milestone><Summary>0</Summary>
+      <ConstraintType>0</ConstraintType><CalendarUID>1</CalendarUID>
+      <PredecessorLink><PredecessorUID>3</PredecessorUID><Type>1</Type><LinkLag>0</LinkLag><LagFormat>7</LagFormat></PredecessorLink>
+    </Task>
+    <Task>
+      <UID>5</UID><ID>5</ID><Name>F Cerca (SNET)</Name>
+      <Duration>PT16H0M0S</Duration><Milestone>0</Milestone><Summary>0</Summary>
+      <ConstraintType>4</ConstraintType><CalendarUID>1</CalendarUID><ConstraintDate>2026-03-11T08:00:00</ConstraintDate>
+      <PredecessorLink><PredecessorUID>1</PredecessorUID><Type>1</Type><LinkLag>0</LinkLag><LagFormat>7</LagFormat></PredecessorLink>
+    </Task>
+    <Task>
+      <UID>6</UID><ID>6</ID><Name>G Sinalizacao (FF)</Name>
+      <Duration>PT16H0M0S</Duration><Milestone>0</Milestone><Summary>0</Summary>
+      <ConstraintType>0</ConstraintType><CalendarUID>1</CalendarUID>
+      <PredecessorLink><PredecessorUID>4</PredecessorUID><Type>0</Type><LinkLag>0</LinkLag><LagFormat>7</LagFormat></PredecessorLink>
+    </Task>
+    <Task>
+      <UID>7</UID><ID>7</ID><Name>E Fim do trecho</Name>
+      <Duration>PT0H0M0S</Duration><Milestone>1</Milestone><Summary>0</Summary>
+      <ConstraintType>0</ConstraintType><CalendarUID>1</CalendarUID>
+      <PredecessorLink><PredecessorUID>4</PredecessorUID><Type>1</Type><LinkLag>0</LinkLag><LagFormat>7</LagFormat></PredecessorLink>
+      <PredecessorLink><PredecessorUID>5</PredecessorUID><Type>1</Type><LinkLag>0</LinkLag><LagFormat>7</LagFormat></PredecessorLink>
+    </Task>
+  </Tasks>
+</Project>

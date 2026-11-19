@@ -1,0 +1,20 @@
+﻿#ficticio=true
+#origem=Fixture SINTÉTICA INFRA 4D (dados fictícios, escrita à mão)
+atividade_id;data;semana_inicio;quantidade;equipes_dias;km_ini_exec;km_fim_exec;horas_chuva;estado;ref_memoria_calculo;observacao
+XX-NAO-EXISTE;2026-11-05;;10;1;;;0;lancado;;frente inexistente
+L3-S03-TER;2026-13-01;;10;2;;;0;lancado;;data impossível
+L3-S03-TER;2026-12-01;;10;2;;;0;lancado;;data no futuro
+L3-S03-TER;2026-11-09;;10;2;;;0;lancado;;na própria data de status
+L3-S03-TER;2026-11-04;;-5;2;;;0;lancado;;quantidade negativa
+L3-S03-TER;2026-11-03;;10;0;;;0;lancado;;produção sem equipe
+L3-S03-TER;2026-11-02;;10;2;60;61;0;lancado;;km fora do trecho
+L3-S03-TER;2026-10-31;;10;2;;;0;pago;;estado inválido
+L3-S03-TER;2026-10-29;;10;2;;;0;aprovado;;aprovado sem memória
+L3-S03-TER;2026-10-28;;10;2;;;30;lancado;;chuva demais
+L3-S03-TER;;2026-11-06;10;2;;;0;lancado;;duplica boletim existente
+M-FIM;2026-11-05;;1;1;;;0;lancado;;marco
+L3-S03-TER;2026-10-27;;abc;2;;;0;lancado;;quantidade não numérica
+L3-S03-TER;2026-10-26;;1.5;2;;;0;lancado;;decimal ambíguo
+L3-S03-TER;2026-10-24;2026-10-24;10;2;;;0;lancado;;data e semana juntas
+L3-S03-TER;;;10;2;;;0;lancado;;sem data
+L1-S03-LAS;2026-11-06;;100;1;;;0;lancado;;linha válida
