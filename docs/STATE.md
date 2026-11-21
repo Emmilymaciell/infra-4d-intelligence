@@ -4,7 +4,7 @@
 
 **PRÓXIMA SESSÃO: NÃO INICIAR DESENVOLVIMENTO AUTOMATICAMENTE. PRIMEIRO RECEBER E CONSOLIDAR A REVISÃO DA TITULAR.** Esta ordem suspende a execução automática da missão V3. Não é arquivamento permanente.
 
-Snapshot formal: **INFRA 4D INTELLIGENCE — SNAPSHOT DE PAUSA PARA REVISÃO DA TITULAR**, em `docs/SNAPSHOT-PAUSA-2026-11-16.md`. Base preservada: branch `codex/demo-interop-vnext`, HEAD inicial `1fa6445e3ab62ac933347c6d26957cae4dfb43ea` mais WIP inventariado. O commit de preservação é identificado por `git log -1 -- docs/SNAPSHOT-PAUSA-2026-11-16.md`; resultado e SHA final nos recibos de encerramento. Não é uma versão profissional homologada. Todo dado é fictício; do Programa real continua proibido nesta fase.
+Snapshot formal: **INFRA 4D INTELLIGENCE — SNAPSHOT DE PAUSA PARA REVISÃO DA TITULAR**, em `docs/SNAPSHOT-PAUSA-2026-11-16.md` (interno, não publicado). Base preservada: branch `codex/demo-interop-vnext`, HEAD inicial `1fa6445e3ab62ac933347c6d26957cae4dfb43ea` mais WIP inventariado. O commit de preservação está no histórico privado; resultado e SHA final nos recibos de encerramento (não publicados). Não é uma versão profissional homologada. Todo dado é fictício; do Programa real continua proibido nesta fase.
 
 - Missão atual somente de preservação/encerramento: nenhuma funcionalidade, correção FreeCAD, melhoria visual ou refatoração. Documentos e artefatos de recuperação são as únicas adições desta sessão.
 - Scanner inicial: 0 ALTA / 1 MEDIA histórica, exit 1, contato institucional em `docs/research/R10-obrasgov.md`, blob `2f6fc389`. A titular **autorizou posteriormente retirar apenas esse bloqueio** para esta preservação privada, mantendo o tratamento definitivo pendente para a retomada. Exceção exata registrada no `project.yaml` e ADR-0017; achado continua visível, sem reclassificação ou supressão. Checkpoint/push sujeitos aos testes e à nova varredura; nenhuma autorização para outros achados, reescrever histórico, force push ou publicação. Remoto privado oficial confirmado; sem nova tag.
@@ -101,7 +101,7 @@ Este é o estado mais recente; o bloco V3 abaixo é o snapshot anterior.
 ## Snapshot anterior — incremento demonstrável V3, 13–14/11/2026
 
 Este bloco prevalece sobre os snapshots históricos abaixo. Missão:
-`INFRA4D_CODEX_PROMPT_MASTER_V3.md`. Somente dados fictícios; nenhum acesso ao Programa,
+`INFRA4D_CODEX_PROMPT_MASTER_V3.md` (interno, não publicado). Somente dados fictícios; nenhum acesso ao Programa,
 instalação global, commit, tag, push ou envio externo foi feito nesta sessão.
 
 - Branch de evolução: `codex/demo-interop-vnext`, criada sobre `1fa6445`; `main`
@@ -162,7 +162,7 @@ instalação global, commit, tag, push ou envio externo foi feito nesta sessão.
   a sessão ou pasta nem presumir portabilidade. `ownership-check`: WARN Three.js
   herdado, registry não alterado. Snapshots locais não são backup externo canônico.
 - Matrizes de requisitos, contratos, licenças, retorno real e auditoria UX estão
-  gravadas. Relatório: `docs/missao/RELATORIO-CODEX-V3-2026-11-14.md`.
+  gravadas. Relatório: `docs/missao/RELATORIO-CODEX-V3-2026-11-14.md` (interno, não publicado).
   Pacote local para revisão: `output/releases/demo-ferrovia-vNext/`;
   hashes em `00-manifesto/SHA256SUMS-final.txt`, snapshot complementar em
   `output/protecao/pos-missao-v3-20261114/` (conferir manifesto desse diretório).
@@ -300,12 +300,12 @@ instalação global, commit, tag, push ou envio externo foi feito nesta sessão.
   ~3h05 (56 + 63 + 66 min). Retomada às 06:11.
 - **Andamento (≈06:35 de 13/11, ~3h25 efetivas):** r20 (varredura de robustez de todas as rotas) fechada com 2
   correções no `api.py`; interface com P4, "Por que errou?" e "indeterminada" (e2e 189/189); HANDOFF reescrito;
-  relatório da missão em `docs/missao/RELATORIO-MISSAO-AUTONOMA.md`, revisado criticamente. Todas as revisões
+  relatório da missão em `docs/missao/RELATORIO-MISSAO-AUTONOMA.md` (interno, não publicado), revisado criticamente. Todas as revisões
   (motor, r2–r20) sem xfail aberto.
 - **Snapshot do `670a040`: 1844 passando, 29 pulados, 0 xfail, exit 0** (11 min).
 - **Snapshot do `4fc3e36` (P8 + r21): 1894 passando, 29 pulados, 0 xfail, exit 0.**
 - **Encerramento (≈07:25 de 13/11):** ~4h19 efetivas. Último commit: P10 (teto do Monte Carlo) e documentos
-  finais. Relatório: `docs/missao/RELATORIO-MISSAO-AUTONOMA.md`.
+  finais. Relatório: `docs/missao/RELATORIO-MISSAO-AUTONOMA.md` (interno, não publicado).
 - **Snapshot do `41cdb42` (último código da missão): 1895 passando, 29 pulados, 0 xfail, exit 0** (10 min).
 - **Auditoria (13/11 10:04–10:40):** relatório em `docs/AUDITORIA-2026-11-13.md`. Suíte reexecutada: 1918 passando,
   6 pulados, exit 0; e2e 189/189. Missão × implementado: 7/10 entregáveis operacionais (3 parciais documentais).
@@ -326,7 +326,7 @@ instalação global, commit, tag, push ou envio externo foi feito nesta sessão.
     montado delas (`output/demo/2026-11-13/demo-5min-capturas.mp4`); `output/` fica fora do Git. Destino das
     evidências pelo OS: armazenamento externo (fora do Git);
   - beta conferido no ar pelo `.\run-beta.ps1` (10 rotas principais com 200);
-  - documentos novos: `docs/DEMO-5-MINUTOS.md`, `docs/HANDOFF-CODEX.md` e `AGENTS.md` atualizado.
+  - documentos novos: `docs/DEMO-5-MINUTOS.md`, `docs/HANDOFF-CODEX.md` (interno, não publicado) e `AGENTS.md` atualizado.
   - **Versão congelada para a demo:** P2/P3 NÃO implementados (mudariam os números).
 - **Retomada se a sessão cair:** ver a seção "Próximo passo" no fim deste arquivo e o `git log`. O que não foi
   commitado está no disco; rode `git status`.
@@ -420,7 +420,7 @@ Discovery fechado (ADR-0004):
 - dados: só sintéticos;
 - cálculo determinístico;
 - contratante: ownership inalterado, por decisão da titular;
-- missão: `docs/missao/INFRA4D_PROMPT_EXECUCAO_COMPLETO.md`.
+- missão: `docs/missao/INFRA4D_PROMPT_EXECUCAO_COMPLETO.md` (interno, não publicado).
 
 ## Agentes (missão de 12–13/11)
 
@@ -466,8 +466,8 @@ suíte); nunca duas suítes completas em paralelo; mutação só em cópia ou mo
 ## Próximo passo
 
 **Encerramento da sessão Claude (13/11, `/session-close`):** `main` em `1fa6445`, 22 commits **não enviados** ao
-GitHub; `eos check` diz "Posso apagar esta sessão? SIM". Histórico da sessão: `docs/sessions/SESSIONS.md`. Quem
-retomar (Claude ou Codex) começa por `AGENTS.md`/`CLAUDE.md` → este arquivo → `docs/HANDOFF-CODEX.md`.
+GitHub; `eos check` diz "Posso apagar esta sessão? SIM". Histórico da sessão: `docs/sessions/SESSIONS.md` (interno, não publicado). Quem
+retomar (Claude ou Codex) começa por `AGENTS.md`/`CLAUDE.md` → este arquivo → `docs/HANDOFF-CODEX.md` (interno, não publicado).
 
 **Próxima unidade executável (uma só):** com a autorização da titular, publicar e proteger o que já está pronto, nesta
 ordem:
@@ -480,7 +480,7 @@ contra `output/demo/2026-11-13/SHA256SUMS.txt`.
 
 Depois disso, o desenvolvimento segue pela lista abaixo.
 
-A missão autônoma terminou (relatório: `docs/missao/RELATORIO-MISSAO-AUTONOMA.md`; retomada: `docs/HANDOFF.md`).
+A missão autônoma terminou (relatório: `docs/missao/RELATORIO-MISSAO-AUTONOMA.md` (interno, não publicado); retomada: `docs/HANDOFF.md`).
 Decisões que dependem da titular: (1) teste manual no Bonsai (R13 §4); (2) enviar ou não a issue do IfcOpenShell
 (`docs/research/R13-anexo-issue-ifcopenshell.md`); (3) tag de versão — exige declarar o critério de aceite desta
 fase no `project.yaml`; (4) push para o GitHub.
@@ -496,7 +496,7 @@ Técnico, em ordem (lacunas da auditoria de 2026-11-13, todas seguras e sem dado
 ## Último checkpoint
 
 - **2026-11-13 — `12219c3` + documentação de transferência:** versão congelada para a demonstração do fim de semana
-  e para o Codex assumir (`docs/HANDOFF-CODEX.md`). Snapshot isolado 1982 passando; e2e 196/196. Nada enviado ao
+  e para o Codex assumir (`docs/HANDOFF-CODEX.md` (interno, não publicado)). Snapshot isolado 1982 passando; e2e 196/196. Nada enviado ao
   GitHub; sem tag nova.
 
 - **2026-11-13 — `eea379d`:** fim da missão autônoma (19 commits sobre a `v0.2.0`), auditado em 13/11: suíte 1918

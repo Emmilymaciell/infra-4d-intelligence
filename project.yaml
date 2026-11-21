@@ -160,5 +160,5 @@ portfolio:
 
 estado:
   fase: "pausado-aguardando-revisao-da-titular"
-  ultimo_checkpoint: "2026-11-16 snapshot de pausa para revisao da titular; identificar commit por git log -1 -- docs/SNAPSHOT-PAUSA-2026-11-16.md; recibos de verificacao em output/pausa/2026-11-16; excecao temporaria ADR-0017"              # Snapshot de preservacao, sem nova versao/tag ou homologacao.
+  ultimo_checkpoint: "2026-11-16 snapshot de pausa para revisao da titular; commit da pausa no historico privado, fora da versao publica; recibos de verificacao em output/pausa/2026-11-16; excecao temporaria ADR-0017"              # Snapshot de preservacao, sem nova versao/tag ou homologacao.
   # O estado detalhado vive em docs/STATE.md. Aqui fica so o ponteiro.

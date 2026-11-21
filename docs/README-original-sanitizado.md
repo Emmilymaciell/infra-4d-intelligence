@@ -2,7 +2,7 @@
 
 > **PAUSADO — AGUARDANDO REVISÃO DETALHADA DA TITULAR (16/11/2026).**
 > Não iniciar desenvolvimento automaticamente. Primeiro receber e consolidar a revisão da titular.
-> Estado e preservação: [snapshot de pausa](SNAPSHOT-PAUSA-2026-11-16.md) e [STATE](STATE.md).
+> Estado e preservação: [STATE](STATE.md) (o snapshot de pausa é material interno, não publicado).
 > Beta fictício, sem homologação profissional ou autorização para dados reais do Programa.
 
 Plataforma BIM 4D de monitoramento fisico, analise de caminho critico e previsao independente de conclusao para obras rodoviarias e ferroviarias

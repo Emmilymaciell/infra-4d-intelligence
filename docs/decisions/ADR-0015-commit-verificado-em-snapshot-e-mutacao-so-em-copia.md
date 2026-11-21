@@ -7,7 +7,7 @@
 ## Contexto
 
 Na missão autônoma, vários agentes editaram o mesmo diretório de trabalho em paralelo. Quatro fatos registrados no
-`docs/STATE.md` e no `docs/missao/RELATORIO-MISSAO-AUTONOMA.md` §6:
+`docs/STATE.md` e no `docs/missao/RELATORIO-MISSAO-AUTONOMA.md` (interno, não publicado) §6:
 
 1. Um commit (`d70bd52`) capturou um arquivo no meio de um teste de mutação de outro agente. O diretório de
    trabalho passava; só o snapshot do commit falhava.
@@ -50,6 +50,6 @@ Três suítes completas rodando em paralelo também travaram com 0% de CPU (STAT
 ## Evidência
 
 - `docs/STATE.md` (registro da missão: snapshots por commit, "Incidente de processo (13/11)", travamento em
-  paralelo) e `docs/missao/RELATORIO-MISSAO-AUTONOMA.md` §6–§7.
+  paralelo) e `docs/missao/RELATORIO-MISSAO-AUTONOMA.md` (interno, não publicado) §6–§7.
 - `pytest.ini` (`faulthandler_timeout`).
 - `CHANGELOG.md` [Não lançado] → Corrigido (rodadas 17 e 18), "Processo".

@@ -12,7 +12,7 @@
 Plataforma BIM 4D de monitoramento físico, análise de caminho crítico e **previsão independente de conclusão** para
 obras rodoviárias e ferroviárias.
 
-> **Dados fictícios.** Versão sanitizada de um sistema em uso real; identificadores do cliente foram substituídos.
+> **Dados fictícios.** Versão pública sanitizada de um projeto privado; nomes e identificadores foram substituídos.
 
 ---
 
@@ -224,7 +224,7 @@ O README operacional original está em [docs/README-original-sanitizado.md](docs
 
 ## Aviso
 
-*Dados fictícios. Versão sanitizada de um sistema em uso real; identificadores do cliente foram substituídos.*
+*Dados fictícios. Versão pública sanitizada de um projeto privado; nomes e identificadores foram substituídos.*
 Projeto em estado beta, sem homologação profissional por engenheiro responsável.
 
 Autora: Emmily Maciel — [github.com/Emmilymaciell](https://github.com/Emmilymaciell)

@@ -1,12 +1,12 @@
 # Matriz de rastreabilidade — demanda Pessoa A
 
-Data: 13/11/2026. Escopo: auditoria inicial da missão `INFRA4D_CODEX_PROMPT_MASTER_V3.md`, sobre o beta existente. Todos os dados examinados são fictícios.
+Data: 13/11/2026. Escopo: auditoria inicial da missão `INFRA4D_CODEX_PROMPT_MASTER_V3.md` (interno, não publicado), sobre o beta existente. Todos os dados examinados são fictícios.
 
 ## Base de evidência
 
 Esta matriz foi produzida por leitura de código, testes e documentos. O auditor não executou testes nem abriu aplicativos de engenharia nesta rodada. A existência de um teste não significa que ele foi executado agora.
 
-O `docs/HANDOFF-CODEX.md` registra a suíte no snapshot isolado `12219c3` com **1982 passando, 7 pulados, saída 0**, e o e2e com **196 PASS, 0 FAIL**. São evidências históricas de 13/11, não certificação da árvore de trabalho desta missão. A reexecução e os resultados atuais devem ser registrados pelo orquestrador no STATE e nas matrizes de interoperabilidade.
+O `docs/HANDOFF-CODEX.md` (interno, não publicado) registra a suíte no snapshot isolado `12219c3` com **1982 passando, 7 pulados, saída 0**, e o e2e com **196 PASS, 0 FAIL**. São evidências históricas de 13/11, não certificação da árvore de trabalho desta missão. A reexecução e os resultados atuais devem ser registrados pelo orquestrador no STATE e nas matrizes de interoperabilidade.
 
 Segundo a liberação do orquestrador, a evolução começou na branch `codex/demo-interop-vnext`, depois de proteção local em `output/protecao/pre-missao-20261113-170327/` (bundle verificado, snapshot HEAD, evidências e WIP). O auditor não repetiu a conferência desses arquivos.
 
@@ -58,4 +58,4 @@ Os seguintes trechos são históricos ou estão desatualizados; não servem isol
 - Rejeitar ou encaminhar para revisão manual conflito de ID, unidade, CRS, vínculo ou quantitativo; nunca sobrescrever silenciosamente a fonte.
 - Manter **experimental** todo recurso que não cumprir o ciclo e o teste correspondente.
 
-Fontes: missão mestre; `AGENTS.md`; `docs/HANDOFF-CODEX.md`; `docs/ARQUITETURA.md`; auditoria de 13/11; ADR-0003/0004/0005/0012/0013/0014/0015; código e testes citados nas linhas. Esta auditoria não acessou arquivos do Programa, credenciais ou o gabarito sintético.
+Fontes: missão mestre; `AGENTS.md`; `docs/HANDOFF-CODEX.md` (interno, não publicado); `docs/ARQUITETURA.md`; auditoria de 13/11; ADR-0003/0004/0005/0012/0013/0014/0015; código e testes citados nas linhas. Esta auditoria não acessou arquivos do Programa, credenciais ou o gabarito sintético.

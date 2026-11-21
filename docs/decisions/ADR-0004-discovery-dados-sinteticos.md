@@ -20,7 +20,7 @@ entregue pela titular em 2026-11-12 responde a três dos itens.
 4. **Contratante (fechado em 2026-11-12):** a demonstração é para Pessoa A. A titular declarou que o papel dele
    "não importa" para o projeto, então o ownership fica **inalterado**: Emmily Maciel é titular e criadora, sem
    `employer_or_client`. Rever só se entrar contrato, cliente ou dado de terceiro.
-5. **Arquivo de missão:** a missão executada é `docs/missao/INFRA4D_PROMPT_EXECUCAO_COMPLETO.md` (versionado).
+5. **Arquivo de missão:** a missão executada é `docs/missao/INFRA4D_PROMPT_EXECUCAO_COMPLETO.md` (interno, não publicado) (versionado).
    O `INFRA4D_CLAUDE_KICKOFF.md` citado nela não existe e não é necessário.
 
 ## Consequências

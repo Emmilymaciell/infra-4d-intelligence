@@ -1,6 +1,6 @@
 # Sanitização desta versão pública
 
-Cópia sanitizada de um projeto em uso real. Nada aqui é dado de cliente ou de terceiro: o que aparece como exemplo é inventado. Detalhe completo da sanitização: relatório interno da autora.
+Cópia sanitizada de um projeto privado. Nada aqui é dado de cliente ou de terceiro: o que aparece como exemplo é inventado. Detalhe completo da sanitização: relatório interno da autora.
 
 ## O que foi removido
 
@@ -37,5 +37,5 @@ Varreduras (2026-11-19): gitleaks `dir` sem vazamentos; busca por caminho local,
 
 ## Adendo 2026-11-19 (coordenador)
 
-- Retirados da versão pública por serem material operacional interno (prompts de missão, handoff do Codex, snapshot de pausa, registros de sessão): `INFRA4D_CODEX_PROMPT_MASTER_V3.md`, `docs/HANDOFF-CODEX.md`, `docs/SNAPSHOT-PAUSA-2026-11-16.md`, `docs/missao/`, `docs/sessions/` (preservados fora do repositório). Referências a eles em documentos narrativos podem ficar sem destino.
+- Retirados da versão pública por serem material operacional interno (prompts de missão, handoff do Codex, snapshot de pausa, registros de sessão): `INFRA4D_CODEX_PROMPT_MASTER_V3.md`, `docs/HANDOFF-CODEX.md`, `docs/SNAPSHOT-PAUSA-2026-11-16.md`, `docs/missao/`, `docs/sessions/` (preservados fora do repositório). Em 2026-11-21, as referências a eles nos documentos narrativos foram neutralizadas ("material interno, não publicado"), sem remover conteúdo técnico.
 - Suíte completa reexecutada pelo coordenador no ambiente do `requirements.txt`: **2236 passed, 6 skipped, 0 failed** (skips: `exige navegador`, cobertos pelo E2E).

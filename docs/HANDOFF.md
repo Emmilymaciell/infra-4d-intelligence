@@ -2,8 +2,8 @@
 
 > **PAUSADO — AGUARDANDO REVISÃO DETALHADA DA TITULAR (16/11/2026).**
 > **PRÓXIMA SESSÃO: NÃO INICIAR DESENVOLVIMENTO AUTOMATICAMENTE. PRIMEIRO RECEBER E CONSOLIDAR A REVISÃO DA TITULAR.**
-> Leia `SNAPSHOT-PAUSA-2026-11-16.md` e o topo de STATE antes dos blocos históricos.
-> Base `1fa6445` + WIP preservado; commit da pausa identificado por `git log -1 -- docs/SNAPSHOT-PAUSA-2026-11-16.md`.
+> Leia o topo de STATE antes dos blocos históricos (o snapshot de pausa é material interno, não publicado).
+> Base `1fa6445` + WIP preservado; commit da pausa registrado no histórico privado (não incluído nesta versão pública).
 > Titular liberou somente o achado médio histórico para esta preservação privada (ADR-0017);
 > reapresentar o tratamento definitivo da informação na retomada, antes de novos trabalhos.
 > Backup Git/WIP inicial Drive confirmado; dados ignorados, banco, modelos e provas
@@ -43,13 +43,13 @@
 > Correção documental autorizada: e-mail institucional substituído pelo link
 > oficial no disco; histórico preservado. Revarredura e adendo no topo do STATE;
 > sem autorização de publicação, commit ou instalação. Relatório atual:
-> `docs/missao/RELATORIO-CODEX-V3-2026-11-14.md`. Os números abaixo são históricos.
+> `docs/missao/RELATORIO-CODEX-V3-2026-11-14.md` (interno, não publicado). Os números abaixo são históricos.
 
 > Para outra pessoa, máquina ou conta assumir o projeto **sem acesso a nenhuma conversa**.
-> **Codex CLI:** comece por `AGENTS.md` e `docs/HANDOFF-CODEX.md` (estado verificado em `12219c3`: 1982 testes
+> **Codex CLI:** comece por `AGENTS.md` e `docs/HANDOFF-CODEX.md` (interno, não publicado) (estado verificado em `12219c3`: 1982 testes
 > passando no snapshot isolado; e2e 196/196). Este arquivo segue como a referência detalhada.
 > Atualizado em 2026-11-13. Base: commit `682c4a0` (snapshot isolado: 1794 passando, 29 pulados, 0 xfail).
-> Ver `git status`: o que não foi commitado existe só no disco. Relatório da missão: `docs/missao/RELATORIO-MISSAO-AUTONOMA.md`.
+> Ver `git status`: o que não foi commitado existe só no disco. Relatório da missão: `docs/missao/RELATORIO-MISSAO-AUTONOMA.md` (interno, não publicado).
 
 - **Projeto:** `infra-4d-intelligence` (Consultoria Parceira), nascido em 2026-11-12 por `py -3.13 -m eos new`.
 - **Contrato canônico:** `registry/projects/infra-4d-intelligence.yaml` no Emmily AI Project OS.

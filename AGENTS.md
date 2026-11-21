@@ -1,7 +1,7 @@
 # AGENTS.md — INFRA 4D INTELLIGENCE
 
 > Pausa determinada pela titular em 16/11/2026: consulte primeiro o topo de `docs/STATE.md`
-> e `docs/SNAPSHOT-PAUSA-2026-11-16.md`. Não iniciar desenvolvimento automaticamente;
+> (o snapshot formal da pausa é material interno e não acompanha esta versão pública). Não iniciar desenvolvimento automaticamente;
 > primeiro receber e consolidar a revisão da titular. Este adaptador não substitui o estado canônico.
 
 Adaptador para agentes de código (Codex CLI e outros). O estado canônico é **neutro de provedor** e é declarado no
@@ -10,7 +10,7 @@ contrato do projeto no registry do Emmily AI Project OS
 
 1. `docs/STATE.md` — onde o projeto está (leia primeiro);
 2. `docs/HANDOFF.md` — como assumir sem nenhuma conversa;
-3. `docs/HANDOFF-CODEX.md` — o mesmo, com o foco no Codex: estado verificado, comandos e próximos passos;
+3. o handoff específico do Codex é material interno e não acompanha esta versão pública — use o `docs/HANDOFF.md`;
 4. `docs/decisions/` — o que já foi decidido (ADR-0001 a 0005 e 0011 a 0015; **0006–0010 reservados**, para não
    confundir com os ADR-0006/0007 do Project OS citados no `project.yaml`). Não reabra uma decisão sem motivo técnico
    novo.

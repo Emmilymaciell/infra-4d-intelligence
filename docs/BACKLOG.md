@@ -2,8 +2,8 @@
 
 > **PAUSADO (16/11/2026).** Não executar este backlog antes de receber e consolidar
 > a revisão detalhada da titular. A lista de revisão futura, incluindo o relato de
-> FCStd que abriu inicialmente sem geometria visível, está em
-> `SNAPSHOT-PAUSA-2026-11-16.md` §F. Nenhuma pendência foi resolvida nesta pausa.
+> FCStd que abriu inicialmente sem geometria visível, está no snapshot de pausa
+> (§F), material interno que não acompanha esta versão pública. Nenhuma pendência foi resolvida nesta pausa.
 
 > Onda V3 (13–14/11/2026): consulte o topo de `docs/STATE.md`, a matriz
 > `docs/requisitos/MATRIZ-PESSOA-A.md` e `docs/INTEROPERABILIDADE-VERIFICADA.md`

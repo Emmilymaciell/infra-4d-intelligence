@@ -272,7 +272,7 @@ Semantic Versioning (`MAJOR.MINOR.PATCH`). Tag só depois de validação ponta a
 
 - `docs/DEMO-5-MINUTOS.md`: roteiro de 5 minutos com a ordem de navegação, as seleções e as simulações (números do
   roteiro completo, conferidos por teste).
-- `docs/HANDOFF-CODEX.md`: estado verificado, arquitetura, comandos, limitações e próximos passos para o Codex CLI.
+- `docs/HANDOFF-CODEX.md` (interno, não publicado): estado verificado, arquitetura, comandos, limitações e próximos passos para o Codex CLI.
 - `AGENTS.md`: adaptador do Codex atualizado, sem contradizer o `CLAUDE.md`. Aponta para o registry e para os
   arquivos canônicos.
 
@@ -422,7 +422,7 @@ Semantic Versioning (`MAJOR.MINOR.PATCH`). Tag só depois de validação ponta a
 ### Adicionado
 
 - Estrutura inicial do projeto, criada por `/os:new-project`.
-- Missão de execução versionada em `docs/missao/INFRA4D_PROMPT_EXECUCAO_COMPLETO.md` (veio da raiz, onde estava
+- Missão de execução versionada em `docs/missao/INFRA4D_PROMPT_EXECUCAO_COMPLETO.md` (interno, não publicado) (veio da raiz, onde estava
   sem rastreio e com nome que tinha espaço e parênteses).
 - Verificação e2e da interface (`tests/e2e/verificar_interface.py`, Chrome headless, 41 checagens, fora do pytest).
 - Aba Linha de balanço (tempo × km), vista 3D inicial na frente crítica e selo de caminho mais longo.

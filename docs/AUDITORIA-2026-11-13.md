@@ -417,7 +417,7 @@ cd C:\caminho\exemplo\infra-4d-intelligence
 
 ## 13. Missão original × implementado
 
-Fonte: `docs/missao/INFRA4D_PROMPT_EXECUCAO_COMPLETO.md`. Só aparece percentual onde há critério objetivo
+Fonte: `docs/missao/INFRA4D_PROMPT_EXECUCAO_COMPLETO.md` (interno, não publicado). Só aparece percentual onde há critério objetivo
 (N de M itens do próprio documento).
 
 | Bloco da missão | Resultado | Pendência |
@@ -445,7 +445,7 @@ tela versionadas.
 | Assunto | Arquivo |
 |---|---|
 | Estado e registro da missão | `docs/STATE.md` |
-| Relatório da missão (anterior a esta auditoria) | `docs/missao/RELATORIO-MISSAO-AUTONOMA.md` |
+| Relatório da missão (anterior a esta auditoria) | `docs/missao/RELATORIO-MISSAO-AUTONOMA.md` (interno, não publicado) |
 | Retomada sem a conversa | `docs/HANDOFF.md` |
 | O que existe, módulo a módulo | `docs/ARQUITETURA.md` |
 | O que falta | `docs/BACKLOG.md`, `docs/IMPLANTACAO-REAL.md` |

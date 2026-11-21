@@ -1,7 +1,7 @@
 # INFRA 4D INTELLIGENCE
 
 > Pausa determinada pela titular em 16/11/2026: consulte primeiro o topo de `docs/STATE.md`
-> e `docs/SNAPSHOT-PAUSA-2026-11-16.md`. Não iniciar desenvolvimento automaticamente;
+> (o snapshot formal da pausa é material interno e não acompanha esta versão pública). Não iniciar desenvolvimento automaticamente;
 > primeiro receber e consolidar a revisão da titular. Este adaptador não substitui o estado canônico.
 
 Plataforma BIM 4D de monitoramento fisico, analise de caminho critico e previsao independente de conclusao para obras rodoviarias e ferroviarias
